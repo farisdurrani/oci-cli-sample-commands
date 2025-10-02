@@ -16,7 +16,7 @@ oci iam compartment list --query 'data[?contains("compartment-id", `.tenancy`)].
 2. Get home region
 
 ```sh
-oci iam region-subscription list --tenancy-id <tenancy-id> --query 'data[?"is-home-region"] | [0] | "region-name"' --raw-output
+oci iam region-subscription list --tenancy-id <tenancy-id> --query 'data[?"is-home-region"==`true`] | [0] | "region-name"' --raw-output
 ```
 
 3. List all compartments
